@@ -157,9 +157,9 @@ class GraphInfo {
         B308 = Node(name: "B308", lat: 37.50289, lng: 126.95689)
         B208 = Node(name: "B208", lat: 37.50372, lng: 126.95709)
         B209 = Node(name: "B209", lat: 37.50377, lng: 126.95763)
-        haebang = Node(name: "haebang", lat: 37.50415, lng: 126.95729)
+        haebang = Node(name: "haebang", lat: 37.504603, lng: 126.957400)
         bluedragon = Node(name: "bluedragon", lat: 37.50562, lng: 126.95727)
-        B204 = Node(name: "B204", lat: 37.50475, lng: 126.95803)
+        B204 = Node(name: "B204", lat: 37.505103, lng: 126.958152)
 
         //이름바뀜
         B104_3F = Node(name: "B104_3F", lat: 37.50552, lng: 126.95834)

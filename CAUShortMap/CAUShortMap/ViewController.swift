@@ -282,7 +282,6 @@ class ViewController: UIViewController, UISearchBarDelegate, UISearchResultsUpda
             print("\(edge.from.name) -> \(edge.to.name) (\(edge.meters) meters, \(edge.time_needed) minutes)")
 
             if index != 0 {
-                // 첫 번째 'from' 좌표를 제외하고 waypointCoordinates 배열에 추가
                 let fromCoordinate = CLLocationCoordinate2D(latitude: edge.from.lat ?? 0, longitude: edge.from.lng ?? 0)
                 waypointCoordinates.append(fromCoordinate)
             }
@@ -301,45 +300,43 @@ class ViewController: UIViewController, UISearchBarDelegate, UISearchResultsUpda
     }
     
     private func mapPathSetup(_ mapView: NMFNaverMapView, waypointCoordinates: [CLLocationCoordinate2D]) {
-        var naverCoordinates: [NMGLatLng] = []
-        
-        // 재귀적으로 경로 세그먼트를 계산하는 내부 함수
-        func calculateNextSegment(index: Int) {
-            if index < waypointCoordinates.count {
-                calculatePathSegment(mapView: mapView, waypointCoordinates: waypointCoordinates, index: index) { newCoordinates in
-                    naverCoordinates += newCoordinates
-
-                    DispatchQueue.main.async {
-                        // 지도에 경로 오버레이 추가
-                        self.pathOverlay.path = NMGLineString(points: naverCoordinates)
-                        self.pathOverlay.color = UIColor(red: 0.95, green: 0.84, blue: 0.89, alpha: 1.00)
-                        self.pathOverlay.mapView = mapView.mapView
-                    }
-
-                    // 다음 세그먼트 계산
-                    calculateNextSegment(index: index + 1)
-                }
+        // 첫 번째 세그먼트 계산 시작
+        calculateNextSegment(mapView: mapView, waypointCoordinates: waypointCoordinates, index: 0, naverCoordinates: []) { finalCoordinates in
+            DispatchQueue.main.async {
+                let pathOverlay = NMFPolylineOverlay(NMGLineString(points: finalCoordinates))
+                pathOverlay?.width = 5
+                pathOverlay?.mapView = mapView.mapView
             }
         }
-
-        // 첫 번째 세그먼트 계산 시작
-        calculateNextSegment(index: 0)
     }
 
+    private func calculateNextSegment(mapView: NMFNaverMapView, waypointCoordinates: [CLLocationCoordinate2D], index: Int, naverCoordinates: [NMGLatLng], completion: @escaping ([NMGLatLng]) -> Void) {
+        if index < waypointCoordinates.count {
+            let startCoord = index == 0 ? sourceCoordinate : waypointCoordinates[index - 1]
+            let endCoord = waypointCoordinates[index]
 
+            calculatePathSegment(startCoord: startCoord, endCoord: endCoord) { newCoordinates in
+                let updatedCoordinates = naverCoordinates + newCoordinates
+                if index == waypointCoordinates.count - 1 {
+                    completion(updatedCoordinates)
+                } else {
+                    self.calculateNextSegment(mapView: mapView, waypointCoordinates: waypointCoordinates, index: index + 1, naverCoordinates: updatedCoordinates, completion: completion)
+                }
+            }
+        } else {
+            completion(naverCoordinates)
+        }
+    }
 
-    private func calculatePathSegment(mapView: NMFNaverMapView, waypointCoordinates: [CLLocationCoordinate2D], index: Int, completion: @escaping ([NMGLatLng]) -> Void) {
-        let startCoord = index == 0 ? sourceCoordinate : waypointCoordinates[index - 1]
-        let endCoord = index < waypointCoordinates.count ? waypointCoordinates[index] : destCoordinate
-        
+    private func calculatePathSegment(startCoord: CLLocationCoordinate2D, endCoord: CLLocationCoordinate2D, completion: @escaping ([NMGLatLng]) -> Void) {
         let directionRequest = MKDirections.Request()
         directionRequest.source = MKMapItem(placemark: MKPlacemark(coordinate: startCoord))
         directionRequest.destination = MKMapItem(placemark: MKPlacemark(coordinate: endCoord))
+        directionRequest.requestsAlternateRoutes = true
         directionRequest.transportType = .walking
-        
+
         let directions = MKDirections(request: directionRequest)
-        directions.calculate { [weak self] (response, error) in
-            guard let self = self else { return }
+        directions.calculate { response, error in
             guard let response = response, let route = response.routes.first else {
                 if let error = error {
                     print("Error calculating directions: \(error)")
