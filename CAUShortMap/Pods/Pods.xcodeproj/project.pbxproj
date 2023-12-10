@@ -33,6 +33,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		484B10872B25C46300E935F2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 484B10862B25C46300E935F2 /* SnapKit */; };
+		484B10932B25EB7700E935F2 /* FloatingPanel in Frameworks */ = {isa = PBXBuildFile; productRef = 484B10922B25EB7700E935F2 /* FloatingPanel */; };
 		7A5B7CC00613BDC13E9D8D00C2E46AD6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		8FC6A2C72795155FEA63324E08279738 /* Pods-CAUShortMap-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F9929E4FBEDC4EB503C23725DF77FB50 /* Pods-CAUShortMap-dummy.m */; };
 		E13007C31168E633D65EB7C83BF82B5C /* Pods-CAUShortMap-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A840C3C5D956E495B645B4BB320D424 /* Pods-CAUShortMap-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -90,7 +92,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				484B10932B25EB7700E935F2 /* FloatingPanel in Frameworks */,
 				7A5B7CC00613BDC13E9D8D00C2E46AD6 /* Foundation.framework in Frameworks */,
+				484B10872B25C46300E935F2 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +256,10 @@
 				0F36AFF21536F0755E6519898C4ED4EE /* PBXTargetDependency */,
 			);
 			name = "Pods-CAUShortMap";
+			packageProductDependencies = (
+				484B10862B25C46300E935F2 /* SnapKit */,
+				484B10922B25EB7700E935F2 /* FloatingPanel */,
+			);
 			productName = Pods_CAUShortMap;
 			productReference = C71F258DD99E38C1E3879563520630C7 /* Pods-CAUShortMap */;
 			productType = "com.apple.product-type.framework";
@@ -274,6 +282,10 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			packageReferences = (
+				484B10852B25C46300E935F2 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				484B10912B25EB7700E935F2 /* XCRemoteSwiftPackageReference "FloatingPanel" */,
+			);
 			productRefGroup = B584DE03F0E13BCEACDA63A12C07B37B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -674,6 +686,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		484B10852B25C46300E935F2 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+		484B10912B25EB7700E935F2 /* XCRemoteSwiftPackageReference "FloatingPanel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SCENEE/FloatingPanel";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		484B10862B25C46300E935F2 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 484B10852B25C46300E935F2 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		484B10922B25EB7700E935F2 /* FloatingPanel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 484B10912B25EB7700E935F2 /* XCRemoteSwiftPackageReference "FloatingPanel" */;
+			productName = FloatingPanel;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }

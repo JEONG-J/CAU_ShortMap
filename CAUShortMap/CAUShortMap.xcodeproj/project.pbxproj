@@ -8,16 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		48253EB52B245B6400743AA1 /* LatLngDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48253EB42B245B6400743AA1 /* LatLngDataModel.swift */; };
+		484B107C2B258B9A00E935F2 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B107B2B258B9A00E935F2 /* Extension.swift */; };
+		484B107E2B25913C00E935F2 /* SearchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B107D2B25913C00E935F2 /* SearchViewCell.swift */; };
+		484B10822B25C38400E935F2 /* Pods_CAUShortMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BCE255EDDBE7EF7119AF02 /* Pods_CAUShortMap.framework */; };
+		484B10832B25C38400E935F2 /* Pods_CAUShortMap.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43BCE255EDDBE7EF7119AF02 /* Pods_CAUShortMap.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		484B10892B25DE2200E935F2 /* GraphModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B10882B25DE2200E935F2 /* GraphModel.swift */; };
+		484B108B2B25DE6300E935F2 /* GraphViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B108A2B25DE6300E935F2 /* GraphViewModel.swift */; };
+		484B108E2B25E34A00E935F2 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B108D2B25E34A00E935F2 /* GlobalData.swift */; };
+		484B10902B25E8A300E935F2 /* MapInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484B108F2B25E8A300E935F2 /* MapInformation.swift */; };
 		48508C032B24456B0037A479 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48508C022B24456B0037A479 /* AppDelegate.swift */; };
 		48508C052B24456B0037A479 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48508C042B24456B0037A479 /* SceneDelegate.swift */; };
 		48508C072B24456B0037A479 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48508C062B24456B0037A479 /* ViewController.swift */; };
 		48508C0C2B24456C0037A479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48508C0B2B24456C0037A479 /* Assets.xcassets */; };
-		65044498643DABEB42ACEA2E /* Pods_CAUShortMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43BCE255EDDBE7EF7119AF02 /* Pods_CAUShortMap.framework */; };
+		4887E0D52B254E5A0031A6DC /* SearchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4887E0D42B254E5A0031A6DC /* SearchInfo.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		484B10842B25C38400E935F2 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				484B10832B25C38400E935F2 /* Pods_CAUShortMap.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		43BCE255EDDBE7EF7119AF02 /* Pods_CAUShortMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CAUShortMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48253EB42B245B6400743AA1 /* LatLngDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatLngDataModel.swift; sourceTree = "<group>"; };
+		484B107B2B258B9A00E935F2 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		484B107D2B25913C00E935F2 /* SearchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewCell.swift; sourceTree = "<group>"; };
+		484B10882B25DE2200E935F2 /* GraphModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphModel.swift; sourceTree = "<group>"; };
+		484B108A2B25DE6300E935F2 /* GraphViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewModel.swift; sourceTree = "<group>"; };
+		484B108D2B25E34A00E935F2 /* GlobalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalData.swift; sourceTree = "<group>"; };
+		484B108F2B25E8A300E935F2 /* MapInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInformation.swift; sourceTree = "<group>"; };
 		48508BFF2B24456B0037A479 /* CAUShortMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CAUShortMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48508C022B24456B0037A479 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48508C042B24456B0037A479 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -25,6 +53,7 @@
 		48508C0B2B24456C0037A479 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48508C102B24456C0037A479 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4864BE22AFD23C29FC8F7388 /* Pods-CAUShortMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CAUShortMap.release.xcconfig"; path = "Target Support Files/Pods-CAUShortMap/Pods-CAUShortMap.release.xcconfig"; sourceTree = "<group>"; };
+		4887E0D42B254E5A0031A6DC /* SearchInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInfo.swift; sourceTree = "<group>"; };
 		B5F000655839905F1F64C40B /* Pods-CAUShortMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CAUShortMap.debug.xcconfig"; path = "Target Support Files/Pods-CAUShortMap/Pods-CAUShortMap.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -33,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65044498643DABEB42ACEA2E /* Pods_CAUShortMap.framework in Frameworks */,
+				484B10822B25C38400E935F2 /* Pods_CAUShortMap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,11 +78,20 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		484B108C2B25DE6A00E935F2 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				484B10882B25DE2200E935F2 /* GraphModel.swift */,
+				484B108A2B25DE6300E935F2 /* GraphViewModel.swift */,
+				484B108F2B25E8A300E935F2 /* MapInformation.swift */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
 		48508BF62B24456B0037A479 = {
 			isa = PBXGroup;
 			children = (
 				48508C012B24456B0037A479 /* CAUShortMap */,
-				48508C002B24456B0037A479 /* Products */,
 				222462A4CAE564724A532444 /* Pods */,
 				6C0180EE10EA2AFEB4F64BDF /* Frameworks */,
 			);
@@ -65,15 +103,22 @@
 				48508BFF2B24456B0037A479 /* CAUShortMap.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		48508C012B24456B0037A479 /* CAUShortMap */ = {
 			isa = PBXGroup;
 			children = (
+				484B108D2B25E34A00E935F2 /* GlobalData.swift */,
+				484B108C2B25DE6A00E935F2 /* Graph */,
 				48508C022B24456B0037A479 /* AppDelegate.swift */,
 				48508C042B24456B0037A479 /* SceneDelegate.swift */,
 				48508C062B24456B0037A479 /* ViewController.swift */,
+				4887E0D42B254E5A0031A6DC /* SearchInfo.swift */,
+				484B107B2B258B9A00E935F2 /* Extension.swift */,
+				484B107D2B25913C00E935F2 /* SearchViewCell.swift */,
 				48253EB42B245B6400743AA1 /* LatLngDataModel.swift */,
+				48508C002B24456B0037A479 /* Products */,
 				48508C0B2B24456C0037A479 /* Assets.xcassets */,
 				48508C102B24456C0037A479 /* Info.plist */,
 			);
@@ -100,12 +145,15 @@
 				48508BFC2B24456B0037A479 /* Frameworks */,
 				48508BFD2B24456B0037A479 /* Resources */,
 				271216754A493AA3D51C1596 /* [CP] Embed Pods Frameworks */,
+				484B10842B25C38400E935F2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = CAUShortMap;
+			packageProductDependencies = (
+			);
 			productName = CAUShortMap;
 			productReference = 48508BFF2B24456B0037A479 /* CAUShortMap.app */;
 			productType = "com.apple.product-type.application";
@@ -134,6 +182,9 @@
 				Base,
 			);
 			mainGroup = 48508BF62B24456B0037A479;
+			packageReferences = (
+				484B107F2B25C31700E935F2 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 48508C002B24456B0037A479 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -202,8 +253,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				48508C072B24456B0037A479 /* ViewController.swift in Sources */,
+				484B107E2B25913C00E935F2 /* SearchViewCell.swift in Sources */,
+				484B108B2B25DE6300E935F2 /* GraphViewModel.swift in Sources */,
 				48253EB52B245B6400743AA1 /* LatLngDataModel.swift in Sources */,
+				4887E0D52B254E5A0031A6DC /* SearchInfo.swift in Sources */,
+				484B10902B25E8A300E935F2 /* MapInformation.swift in Sources */,
+				484B107C2B258B9A00E935F2 /* Extension.swift in Sources */,
+				484B108E2B25E34A00E935F2 /* GlobalData.swift in Sources */,
 				48508C032B24456B0037A479 /* AppDelegate.swift in Sources */,
+				484B10892B25DE2200E935F2 /* GraphModel.swift in Sources */,
 				48508C052B24456B0037A479 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,10 +392,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B5F000655839905F1F64C40B /* Pods-CAUShortMap.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8B8B4462NV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CAUShortMap/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -361,10 +421,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4864BE22AFD23C29FC8F7388 /* Pods-CAUShortMap.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8B8B4462NV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CAUShortMap/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -406,6 +468,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		484B107F2B25C31700E935F2 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 48508BF72B24456B0037A479 /* Project object */;
 }
