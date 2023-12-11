@@ -142,38 +142,39 @@ class GraphInfo {
     
         defaultNode = Node(name: "default", lat: 0, lng: 0)
 
-        sangdo = Node(name: "sangdo", lat: 37.50331, lng: 126.94817)
-        backgate = Node(name: "backgate", lat: 37.50499, lng: 126.95394)
-        backroad = Node(name: "backroad", lat: 37.50471, lng: 126.95477)
-        B305 = Node(name: "B305", lat: 37.50437, lng: 126.95466)
+        sangdo = Node(name: "sangdo", lat: 37.503093, lng: 126.948077)
+        backgate = Node(name: "backgate", lat: 37.505005, lng: 126.953959)
+        backroad = Node(name: "backroad", lat: 37.504658, lng: 126.954748)
+        B305 = Node(name: "B305", lat: 37.504313, lng: 126.954740)
 
         // 이름바뀜
-        B303_6F = Node(name: "B303_6F", lat: 37.50449, lng: 126.95575)
-        B303_B1F = Node(name: "B303_B1F", lat: 37.50489, lng: 126.95594)
-        B310_1F = Node(name: "B310_1F", lat: 37.50388, lng: 126.95565)
-        B310_B3F = Node(name: "B310_B3F", lat: 37.5041, lng: 126.95651)
-        B310_B5F = Node(name: "B310_B5F", lat: 37.5044, lng: 126.95689)
+        B303_6F = Node(name: "B303_6F", lat: 37.504507, lng: 126.955581)
+        B303_B1F = Node(name: "B303_B1F", lat: 37.504976, lng: 126.955775)
+        B310_1F = Node(name: "B310_1F", lat: 37.504041, lng: 126.955572)
+        B310_B3F = Node(name: "B310_B3F", lat: 37.504061, lng: 126.956348)
+        B310_B5F = Node(name: "B310_B5F", lat: 37.504417, lng: 126.956890)
 
-        B308 = Node(name: "B308", lat: 37.50289, lng: 126.95689)
-        B208 = Node(name: "B208", lat: 37.50372, lng: 126.95709)
-        B209 = Node(name: "B209", lat: 37.50377, lng: 126.95763)
+        B308 = Node(name: "B308", lat: 37.502919, lng: 126.956933)
+        B208 = Node(name: "B208", lat: 37.503781, lng: 126.957024)
+        B209 = Node(name: "B209", lat: 37.503725, lng: 126.957600)
+        
         haebang = Node(name: "haebang", lat: 37.504603, lng: 126.957400)
-        bluedragon = Node(name: "bluedragon", lat: 37.50562, lng: 126.95727)
+        bluedragon = Node(name: "bluedragon", lat: 37.505792, lng: 126.957375)
         B204 = Node(name: "B204", lat: 37.505103, lng: 126.958152)
 
         //이름바뀜
-        B104_3F = Node(name: "B104_3F", lat: 37.50552, lng: 126.95834)
+        B104_3F = Node(name: "B104_3F", lat: 37.505838, lng: 126.958352)
         B104_1F = Node(name: "B104_1F", lat: 37.50586, lng: 126.95835)
 
 
-        B106 = Node(name: "B106", lat: 37.50515, lng: 126.9588)
-        ppaegwang = Node(name: "ppaegwang", lat: 37.50602, lng: 126.95746)
+        B106 = Node(name: "B106", lat: 37.505179, lng: 126.958640)
+        ppaegwang = Node(name: "ppaegwang", lat: 37.506161, lng: 126.957602)
 
-        grass = Node(name: "grass", lat: 37.50643, lng: 126.95806)
-        B101 = Node(name: "B101", lat: 37.50595, lng: 126.95801)
-        B102 = Node(name: "B102", lat: 37.50649, lng: 126.95882)
-        frontgate = Node(name: "frontgate", lat: 37.5068, lng: 126.95841)
-        heukseok = Node(name: "heukseok", lat: 37.50869, lng: 126.96387)
+        grass = Node(name: "grass", lat: 37.506729, lng: 126.958026)
+        B101 = Node(name: "B101", lat: 37.506058, lng: 126.958030)
+        B102 = Node(name: "B102", lat: 37.506423, lng: 126.958507)
+        frontgate = Node(name: "frontgate", lat: 37.506813, lng: 126.958459)
+        heukseok = Node(name: "heukseok", lat: 37.509124, lng: 126.963283)
 
 
 

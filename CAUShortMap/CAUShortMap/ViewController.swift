@@ -350,8 +350,6 @@ class ViewController: UIViewController, UISearchBarDelegate, UISearchResultsUpda
             completion(naverCoordinates)
         }
     }
-
-    
     
     private func initMap(){
         self.pathOverlay.mapView = nil
