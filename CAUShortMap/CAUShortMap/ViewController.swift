@@ -19,9 +19,9 @@ class ViewController: UIViewController, UISearchBarDelegate, UISearchResultsUpda
     private lazy var locationManager = CLLocationManager()
     private lazy var sourceCoordinate = CLLocationCoordinate2D()
     private lazy var destCoordinate =  CLLocationCoordinate2D()
-    private lazy var pathOverlay = NMFPath()
     private lazy var popUpView = MapInformation()
     private var modeFlag: Int?
+    private lazy var pathOverlay =  NMFPolylineOverlay()
     private lazy var startText = ""
     private lazy var endText = ""
     private lazy var saveText = ""
@@ -303,9 +303,13 @@ class ViewController: UIViewController, UISearchBarDelegate, UISearchResultsUpda
         // 첫 번째 세그먼트 계산 시작
         calculateNextSegment(mapView: mapView, waypointCoordinates: waypointCoordinates, index: 0, naverCoordinates: []) { finalCoordinates in
             DispatchQueue.main.async {
-                let pathOverlay = NMFPolylineOverlay(NMGLineString(points: finalCoordinates))
-                pathOverlay?.width = 5
-                pathOverlay?.mapView = mapView.mapView
+                if let overlay = NMFPolylineOverlay(NMGLineString(points: finalCoordinates)) {
+                    overlay.width = 5
+                    overlay.mapView = mapView.mapView
+                    overlay.color = .purple
+                    self.pathOverlay = overlay
+                }
+                
             }
         }
     }
@@ -427,6 +431,7 @@ class SetFloatingPanelLayout: FloatingPanelLayout{
         .full: FloatingPanelLayoutAnchor(absoluteInset: 0.5, edge: .top, referenceGuide: .safeArea),
         .half: FloatingPanelLayoutAnchor(fractionalInset: 0.5, edge: .bottom, referenceGuide: .safeArea),
         .tip: FloatingPanelLayoutAnchor(absoluteInset: 50, edge: .bottom, referenceGuide: .safeArea),
+        .hidden: FloatingPanelLayoutAnchor(absoluteInset: 0, edge: .bottom, referenceGuide: .safeArea)
     ]
     
 }
