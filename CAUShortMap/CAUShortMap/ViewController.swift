@@ -21,11 +21,13 @@ class ViewController: UIViewController, UISearchBarDelegate, UISearchResultsUpda
     private lazy var destCoordinate =  CLLocationCoordinate2D()
     private lazy var popUpView = MapInformation()
     private var modeFlag: Int?
-    private lazy var pathOverlay =  NMFPolylineOverlay()
+    
     private lazy var startText = ""
     private lazy var endText = ""
     private lazy var saveText = ""
     private let cauModel = CAUModel()
+    private lazy var fpc = FloatingPanelController()
+    private lazy var pathOverlay =  NMFPolylineOverlay()
     private lazy var naverMapView = NMFNaverMapView(frame: self.view.frame)
     private lazy var mapView = NMFMapView()
     private lazy var searchMarker = NMFMarker()
@@ -134,16 +136,15 @@ class ViewController: UIViewController, UISearchBarDelegate, UISearchResultsUpda
     private func sheetPop(){
         let apper = SurfaceAppearance()
         apper.cornerRadius = 25
-        
-        let fpc = FloatingPanelController()
-        fpc.delegate = self
-        fpc.surfaceView.appearance = apper
-        fpc.layout = SetFloatingPanelLayout()
+        self.fpc.delegate = self
+        self.fpc.surfaceView.appearance = apper
+        self.fpc.layout = SetFloatingPanelLayout()
         
         let contenVC = popUpView
         
-        fpc.set(contentViewController: contenVC)
-        fpc.addPanel(toParent: self)
+        self.fpc.set(contentViewController: contenVC)
+        self.fpc.addPanel(toParent: self)
+        self.fpc.show(animated: true, completion: nil)
     }
     
     //MARK: -NaverMap
@@ -357,6 +358,9 @@ class ViewController: UIViewController, UISearchBarDelegate, UISearchResultsUpda
     
     private func initMap(){
         self.pathOverlay.mapView = nil
+        
+        self.fpc.hide(animated: true)
+        
         arriveMarker.mapView = nil
     }
     
@@ -412,6 +416,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UISearchResultsUpda
     
     @objc func startDest(){
         if let model = cauModel.getLocationData(for: saveText){
+            initMap()
             arriveMakerMake(model: model)
             endText = saveText
             print(endText)
